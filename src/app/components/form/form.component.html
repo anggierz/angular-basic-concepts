@@ -1,1 +1,37 @@
-<p>form works!</p>
+<h2>Formulario</h2>
+
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <label for="name">Nombre</label>
+    <input type="text" id="name" formControlName="name">
+
+
+    <label for="lastname">Apellidos</label>
+    <input type="text" id="lastname" formControlName="lastname">
+
+    <label for="telephone">Teléfono</label>
+    <input type="tel" id="telephone" formControlName="telephone">
+
+    <label for="birthdate">Fecha de nacimiento</label>
+    <input type="date" id="birthdate" formControlName="birthdate">
+
+    <button type="submit" [disabled]="userForm.invalid">Añadir Usuario</button>
+</form>
+
+<h3>Tabla de usuarios</h3>
+
+<table border="1">
+  <tr>
+    <th>Nombre</th>
+    <th>Apellidos</th>
+    <th>Teléfono</th>
+    <th>Fecha Nacimiento</th>
+  </tr>
+  <tr *ngFor="let u of users">
+    <td>{{ u.name }}</td>
+    <td>{{ u.lastname }}</td>
+    <td>{{ u.telephone }}</td>
+    <td>{{ u.birthdate }}</td>
+  </tr>
+</table>
+
+
