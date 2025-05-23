@@ -1,37 +1,48 @@
-<h2>Formulario</h2>
+<div class="form-container">
+  <h2>Formulario</h2>
 
-<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
-    <label for="name">Nombre</label>
-    <input type="text" id="name" formControlName="name">
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Nombre</label>
+      <input type="text" id="name" formControlName="name">
+    </div>
 
+    <div class="form-group">
+      <label for="lastname">Apellidos</label>
+      <input type="text" id="lastname" formControlName="lastname">
+    </div>
 
-    <label for="lastname">Apellidos</label>
-    <input type="text" id="lastname" formControlName="lastname">
+    <div class="form-group">
+      <label for="telephone">Teléfono</label>
+      <input type="tel" id="telephone" formControlName="telephone">
+    </div>
 
-    <label for="telephone">Teléfono</label>
-    <input type="tel" id="telephone" formControlName="telephone">
-
-    <label for="birthdate">Fecha de nacimiento</label>
-    <input type="date" id="birthdate" formControlName="birthdate">
+    <div class="form-group">
+      <label for="birthdate">Fecha de nacimiento</label>
+      <input type="date" id="birthdate" formControlName="birthdate">
+    </div>
 
     <button type="submit" [disabled]="userForm.invalid">Añadir Usuario</button>
-</form>
+  </form>
 
-<h3>Tabla de usuarios</h3>
+  <h3>Tabla de usuarios</h3>
 
-<table border="1">
-  <tr>
-    <th>Nombre</th>
-    <th>Apellidos</th>
-    <th>Teléfono</th>
-    <th>Fecha Nacimiento</th>
-  </tr>
-  <tr *ngFor="let u of users">
-    <td>{{ u.name }}</td>
-    <td>{{ u.lastname }}</td>
-    <td>{{ u.telephone }}</td>
-    <td>{{ u.birthdate }}</td>
-  </tr>
-</table>
-
-
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Apellidos</th>
+        <th>Teléfono</th>
+        <th>Fecha Nacimiento</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let u of users">
+        <td>{{ u.name }}</td>
+        <td>{{ u.lastname }}</td>
+        <td>{{ u.telephone }}</td>
+        <td>{{ u.birthdate }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

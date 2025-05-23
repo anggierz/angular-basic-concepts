@@ -1,8 +1,11 @@
-<h2>Contador</h2>
-
-<div>
-    <h3>Valor del contador: {{ count }} </h3>
-    <button (click)="increment()">➕</button>
-    <button (click)="decrement()">➖</button>
-    <button (click)="reset()">🔄</button>
+<div class="counter-container">
+    <h2>Contador</h2>
+    <div>
+        <h3>Valor del contador: {{ count }}</h3>
+        <div class="counter-buttons">
+            <button (click)="increment()">➕</button>
+            <button (click)="decrement()">➖</button>
+            <button (click)="reset()">🔄</button>
+        </div>
+    </div>
 </div>
